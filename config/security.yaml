@@ -1,0 +1,7 @@
+crypt:
+
+  # 密钥
+  key: "*(HKi34&^O"
+
+  # 加密算法
+  cipher: aes-256-cfb
