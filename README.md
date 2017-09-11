@@ -9,7 +9,7 @@
 ### 获取代码
 ``` bash
 cd /workspace
-git clone git@github.com:mellivora-php-framework/framework.git my.host.com
+git clone git@github.com:zhouyl/mellivora-framework.git my.host.com
 cd my.host.com
 composer install
 bash bin/app-init.sh
