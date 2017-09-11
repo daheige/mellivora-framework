@@ -169,7 +169,7 @@ class Bootstrap
         self::loadEnvironmentSettings();
 
         $app = new ConsoleApp(self::loadConsoleSettings());
-        $app->setExceptionHandler(new \App\Commands\ExceptionHandler);
+        $app->setExceptionHandler(new Commands\ExceptionHandler);
 
         return $app->run();
     }
