@@ -15,8 +15,18 @@ commands=(
     # "$php claw my:task"
 )
 
+# 进入工作目录
 root=$(cd "$(dirname "$0")"; cd ../; pwd)
-logfile=$root/storage/logs/`date +%Y%m%d`/daemon-service.log
+cd $root
+
+# 创建日志文件目录
+logdir=$root/storage/logs/`date +%Y%m%d`
+logfile=$logdir/daemon-service.log
+
+if [ ! -d $logdir ]; then
+    mkdir -p $logdir
+    chmod ugo+w $logdir
+fi
 
 start() {
     for ((i = 0; i < ${#commands[@]}; i++)) ; do

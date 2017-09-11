@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use Mellivora\Application\Controller as ParentController;
+use Mellivora\Http\Response;
 
 class Controller extends ParentController
 {
@@ -24,12 +25,21 @@ class Controller extends ParentController
     public function initialize() {}
 
     /**
+     * action 完成后将会执行该方法
+     * 如果对 $response 进行修改并 return，可以对输出结果进行调整
+     *
+     * @param  \Mellivora\Http\Response        $response
+     * @return \Mellivora\Http\Response|void
+     */
+    public function finalize(Response $response) {}
+
+    /**
      * 响应错误信息
      *
      * @param string $message
      * @param array  $data
      */
-    public function ajaxResponse($code, $message = null, $data = null)
+    public function ajax($code, $message = null, $data = null)
     {
         return response()->withJson([
             'code'      => (int) $code,
@@ -45,9 +55,9 @@ class Controller extends ParentController
      * @param string $message
      * @param array  $data
      */
-    public function ajaxError($message = null, $data = null)
+    public function error($message = null, $data = null)
     {
-        return $this->ajaxResponse(static::INTERNAL_ERROR, $message, $data);
+        return $this->ajax(static::INTERNAL_ERROR, $message, $data);
     }
 
     /**
@@ -56,8 +66,8 @@ class Controller extends ParentController
      * @param string $message
      * @param array  $data
      */
-    public function ajaxSuccess($message = null, $data = null)
+    public function success($message = null, $data = null)
     {
-        return $this->ajaxResponse(static::SUCCEED, $message, $data);
+        return $this->ajax(static::SUCCEED, $message, $data);
     }
 }

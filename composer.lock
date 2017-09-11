@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a9a877a1ba1bd62758ca38ee83cbc09e",
+    "content-hash": "396629532b73e47e50ede5ffa88df4de",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -106,16 +106,16 @@
         },
         {
             "name": "mellivora/mellivora",
-            "version": "v1.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/mellivora-php-framework/mellivora.git",
-                "reference": "c1fd977eb6f4f8eda173f9934286d0a0892b0b73"
+                "url": "https://github.com/zhouyl/mellivora.git",
+                "reference": "142af8e64c0285652a1f3921f755b716648d0cf8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/mellivora-php-framework/mellivora/c1fd977eb6f4f8eda173f9934286d0a0892b0b73.zip",
-                "reference": "c1fd977eb6f4f8eda173f9934286d0a0892b0b73",
+                "url": "https://files.phpcomposer.com/files/zhouyl/mellivora/142af8e64c0285652a1f3921f755b716648d0cf8.zip",
+                "reference": "142af8e64c0285652a1f3921f755b716648d0cf8",
                 "shasum": ""
             },
             "require": {
@@ -149,7 +149,7 @@
             ],
             "description": "Mellivora PHP Framework",
             "homepage": "https://github.com/mellivora-php-framework/mellivora",
-            "time": "2017-08-31T08:01:46+00:00"
+            "time": "2017-09-11T05:55:09+00:00"
         },
         {
             "name": "nikic/fast-route",
@@ -919,7 +919,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "mellivora/mellivora": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

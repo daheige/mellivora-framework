@@ -41,7 +41,10 @@ class Controller extends ParentController
      * @param  \Exception                 $e
      * @return \Mellivora\Http\Response
      */
-    public function exceptionHandler(\Exception $e) {}
+    public function exceptionHandler(\Exception $e)
+    {
+        return $this->response($e->getCode() ?: self::INTERNAL_ERROR, $e->getMessage());
+    }
 
     /**
      * API 请求参数检查

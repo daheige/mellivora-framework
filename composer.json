@@ -2,7 +2,7 @@
     "name": "mellivora/framework",
     "type": "library",
     "description": "Web Framework for Mellivora",
-    "homepage": "https://github.com/mellivora-php-framework/framework",
+    "homepage": "https://github.com/zhouyl/framework",
     "license": "MIT",
     "authors": [
         {
@@ -21,7 +21,7 @@
     ],
     "require": {
         "php": ">=5.6.0",
-        "mellivora/mellivora": "^1.0"
+        "mellivora/mellivora": "dev-master"
     },
     "autoload": {
         "psr-4": {
