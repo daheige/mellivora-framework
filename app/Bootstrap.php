@@ -82,9 +82,12 @@ class Bootstrap
     public static function registerErrorHandler()
     {
         set_error_handler(function ($code, $error, $file, $line) {
-            throw new ErrorException($error, $code, 0, $file, $line);
+            // 当错误被屏蔽时，不再输出 ErrorException
+            if (!(error_reporting() & $errno)) {
+                return false;
+            }
 
-            return true;
+            throw new ErrorException($error, $code, 0, $file, $line);
         });
     }
 
